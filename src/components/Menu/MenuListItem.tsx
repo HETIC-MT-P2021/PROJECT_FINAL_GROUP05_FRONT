@@ -1,14 +1,14 @@
-import { FC } from "react";
-import { FaClipboard } from "react-icons/fa";
+import {FC, ReactElement} from "react";
 
 interface MenuItemProps {
+  icon: ReactElement;
   name: String;
 }
 
-const MenuListItem: FC<MenuItemProps> = ({ name }: MenuItemProps) => {
+const MenuListItem: FC<MenuItemProps> = ({ name, icon }: MenuItemProps) => {
   return (
     <li>
-      <FaClipboard />
+      {icon}&nbsp;&nbsp;
       {name}
     </li>
   );
