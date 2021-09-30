@@ -61,7 +61,7 @@ const Menu: FC = () => {
     <div className="columns">
       <MenuDiv className="column is-one-fifth">
         <div className="has-background-dark is-flex is-justify-content-start is-align-items-center is-flex-direction-column hero is-link is-fullheight">
-          <img src="assets/logo192.png" />
+          <img alt="logo" src="assets/logo192.png" />
           <Dropdown />
           <MenuList items={mainMenuItems} title="" />
           <MenuList items={featureMenuItems} title="Fonctionnalités" />

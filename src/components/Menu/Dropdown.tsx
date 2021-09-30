@@ -1,15 +1,20 @@
 import { FC, useState } from "react";
 import {FiChevronDown} from "react-icons/all";
+import styled from "styled-components";
+
+const ButtonContainer = styled.div`
+  width: 90%;
+`;
 
 const Dropdown: FC = () => {
   const [isOpen, toggleOpen] = useState(false);
   return (
-    <div className="my-4">
-      <div
-        className={`dropdown ${isOpen ? "is-active" : ""} has-background-dark`}
+    <ButtonContainer className="my-4">
+      <ButtonContainer
+        className={`dropdown ${isOpen ? "is-active" : ""} is-normal is-fullwidth has-background-dark`}
       >
-        <div className="dropdown-trigger">
-          <button
+        <ButtonContainer className="dropdown-trigger">
+          <ButtonContainer
             className="button has-background-black-ter"
             aria-haspopup="true"
             aria-controls="dropdown-menu"
@@ -19,8 +24,8 @@ const Dropdown: FC = () => {
             <span className="icon is-small">
               <FiChevronDown className={"icon is-medium has-text-white"}/>
             </span>
-          </button>
-        </div>
+          </ButtonContainer>
+        </ButtonContainer>
         <div className="dropdown-menu" id="dropdown-menu" role="menu">
           <div className="dropdown-content has-background-black-ter">
             <a
@@ -39,8 +44,8 @@ const Dropdown: FC = () => {
             </a>
           </div>
         </div>
-      </div>
-    </div>
+      </ButtonContainer>
+    </ButtonContainer>
   );
 };
 
