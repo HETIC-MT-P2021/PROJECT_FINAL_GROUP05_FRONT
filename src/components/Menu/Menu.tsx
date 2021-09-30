@@ -27,7 +27,7 @@ const mainMenuItems: Array<MenuItem> = [
   },
   {
     name: "Premium",
-    icon: <AiOutlineCrown className={"has-text-warning"}/>
+    icon: <AiOutlineCrown className={"has-text-warning"} />
   }
 ];
 
@@ -52,15 +52,11 @@ const featureMenuItems: Array<MenuItem> = [
 
 const Menu: FC = () => {
   return (
-    <div>
-      <div className="columns">
-        <div className="column is-one-fifth has-background-dark is-flex is-justify-content-start   is-align-items-center is-flex-direction-column hero is-link is-fullheight">
-          <img src="assets/logo192.png" />
-          <Dropdown />
-          <MenuList items={mainMenuItems} title="" />
-          <MenuList items={featureMenuItems} title="Fonctionnalités" />
-        </div>
-      </div>
+    <div className="column is-one-fifth has-background-dark is-flex is-justify-content-start   is-align-items-center is-flex-direction-column hero is-link is-fullheight">
+      <img src="assets/logo192.png" />
+      <Dropdown />
+      <MenuList items={mainMenuItems} title="" />
+      <MenuList items={featureMenuItems} title="Fonctionnalités" />
     </div>
   );
 };
