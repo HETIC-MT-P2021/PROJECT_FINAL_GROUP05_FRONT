@@ -6,7 +6,7 @@ const LoginItem: FC = () => {
       <div className="navbar-item">
         <div className="buttons">
           <a className="navbar-dropdown.is-right">
-            <figure className="image is-32x32">
+            <figure className="image is-48x48">
               <img className="is-rounded" src="https://bulma.io/images/placeholders/128x128.png"/>
             </figure>
           </a>

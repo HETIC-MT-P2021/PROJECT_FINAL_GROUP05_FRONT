@@ -2,6 +2,7 @@ import { FC } from "react";
 import Dropdown from "./Dropdown";
 import MenuList from "./MenuList";
 import { MenuItem } from "../../domain/MenuItem";
+import styled from 'styled-components';
 import {
   AiOutlineCrown,
   AiOutlineVideoCamera,
@@ -11,6 +12,11 @@ import {
   IoLibraryOutline,
   RiDashboardLine
 } from "react-icons/all";
+
+const MenuDiv = styled.div`
+  z-index: 10!important;
+  position: fixed;
+`;
 
 const mainMenuItems: Array<MenuItem> = [
   {
@@ -52,15 +58,15 @@ const featureMenuItems: Array<MenuItem> = [
 
 const Menu: FC = () => {
   return (
-    <div>
-      <div className="columns">
-        <div className="column is-one-fifth has-background-dark is-flex is-justify-content-start   is-align-items-center is-flex-direction-column hero is-link is-fullheight">
+    <div className="columns">
+      <MenuDiv className="column is-one-fifth">
+        <div className="has-background-dark is-flex is-justify-content-start is-align-items-center is-flex-direction-column hero is-link is-fullheight">
           <img src="assets/logo192.png" />
           <Dropdown />
           <MenuList items={mainMenuItems} title="" />
           <MenuList items={featureMenuItems} title="Fonctionnalités" />
         </div>
-      </div>
+      </MenuDiv>
     </div>
   );
 };
