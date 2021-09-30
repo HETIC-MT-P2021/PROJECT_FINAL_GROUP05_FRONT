@@ -7,7 +7,7 @@ interface MenuItemProps {
 
 const MenuListItem: FC<MenuItemProps> = ({ name, icon }: MenuItemProps) => {
   return (
-    <li>
+    <li className="my-1">
       {icon}&nbsp;&nbsp;
       {name}
     </li>

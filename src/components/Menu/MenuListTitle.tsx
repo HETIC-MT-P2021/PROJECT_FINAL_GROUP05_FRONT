@@ -9,7 +9,7 @@ const MenuListTitle: FC<MenuListTitleProps> = ({
 }: MenuListTitleProps) => {
   return (
     <>
-      <h2>{title}</h2>
+      <h2 className={"mt-4 mb-2 is-size-5 has-text-weight-semibold"}>{title}</h2>
     </>
   );
 };

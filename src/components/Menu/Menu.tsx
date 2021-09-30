@@ -2,15 +2,14 @@ import { FC } from "react";
 import Dropdown from "./Dropdown";
 import MenuList from "./MenuList";
 import { MenuItem } from "../../domain/MenuItem";
-import { RiDashboardLine } from "react-icons/ri";
 import {
   AiOutlineCrown,
   AiOutlineVideoCamera,
   BsImage,
-  FiChevronsRight,
   FiMusic,
   FiSettings,
-  IoLibraryOutline
+  IoLibraryOutline,
+  RiDashboardLine
 } from "react-icons/all";
 
 const mainMenuItems: Array<MenuItem> = [
@@ -47,7 +46,7 @@ const featureMenuItems: Array<MenuItem> = [
   },
   {
     name: "Avancé",
-    icon: <FiChevronsRight className={"has-text-warning"} />
+    icon: <AiOutlineCrown className={"has-text-warning"} />
   }
 ];
 

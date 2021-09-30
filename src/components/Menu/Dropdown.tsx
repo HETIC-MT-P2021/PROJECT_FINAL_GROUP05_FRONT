@@ -1,9 +1,10 @@
 import { FC, useState } from "react";
+import {FiChevronDown} from "react-icons/all";
 
 const Dropdown: FC = () => {
   const [isOpen, toggleOpen] = useState(false);
   return (
-    <div className="">
+    <div className="my-4">
       <div
         className={`dropdown ${isOpen ? "is-active" : ""} has-background-dark`}
       >
@@ -16,7 +17,7 @@ const Dropdown: FC = () => {
           >
             <span className="has-text-white">Risitar</span>
             <span className="icon is-small">
-              <i className="fas fa-angle-down" aria-hidden="true"></i>
+              <FiChevronDown className={"icon is-medium has-text-white"}/>
             </span>
           </button>
         </div>
