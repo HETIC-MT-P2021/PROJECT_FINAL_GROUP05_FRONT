@@ -17,14 +17,14 @@ const settingsCommandsItems: Array<SettingsCommandsItem> = [
 
 const SettingsCommandsListContainer = styled.div`
   padding: 20px;
-  margin: 20px;
+	margin-top: 6rem;
   border-radius: 10px;
-  width: 100%;
 `;
 
 const SettingsCommandsList: FC = () => {
   return (
-    <SettingsCommandsListContainer className="has-background-grey-darker">
+		<div className="column hero is-fullwidth is-flex is-align-items-end">
+    <SettingsCommandsListContainer className="has-background-grey-darker column is-four-fifths">
       <SettingsCommandsTitle title="Gestion des commandes" />
       {settingsCommandsItems.map(item => {
         return (
@@ -32,6 +32,7 @@ const SettingsCommandsList: FC = () => {
         );
       })}
     </SettingsCommandsListContainer>
+		</div>
   );
 };
 

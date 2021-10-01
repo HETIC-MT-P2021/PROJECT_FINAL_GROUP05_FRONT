@@ -8,8 +8,10 @@ interface MenuItemProps {
 const MenuListItem: FC<MenuItemProps> = ({ name, icon }: MenuItemProps) => {
   return (
     <li className="my-1">
+      <a href="#" className={"is-link"}>
       {icon}&nbsp;&nbsp;
       {name}
+      </a>
     </li>
   );
 };
