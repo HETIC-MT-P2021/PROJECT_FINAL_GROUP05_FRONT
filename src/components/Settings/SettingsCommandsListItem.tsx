@@ -9,10 +9,6 @@ const SettingsCommandsListItemContainer = styled.div`
   border-radius: 10px;
 `;
 
-const Title = styled.div`
-  margin-bottom: 20px;
-`;
-
 const SettingsCommandsListItem: FC<SettingsCommandsItem> = ({
   title,
   command
@@ -23,7 +19,7 @@ const SettingsCommandsListItem: FC<SettingsCommandsItem> = ({
         <h2 className="has-text-white">{title}</h2>
         <p className="is-size-7">{command}</p>
       </div>
-      <SettingsCommandsListItemCheckbox />
+      <SettingsCommandsListItemCheckbox/>
     </SettingsCommandsListItemContainer>
   );
 };
