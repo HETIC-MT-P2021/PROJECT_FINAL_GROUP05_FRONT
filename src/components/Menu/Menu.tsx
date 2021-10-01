@@ -33,7 +33,7 @@ const mainMenuItems: Array<MenuItem> = [
   },
   {
     name: "Premium",
-    icon: <AiOutlineCrown className={"has-text-warning"}/>
+    icon: <AiOutlineCrown className={"has-text-warning"} />
   }
 ];
 
