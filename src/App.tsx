@@ -5,12 +5,12 @@ import SearchBar from "./components/SearchBar/TopBar";
 import "bulma/css/bulma.min.css";
 
 function App() {
-  return (
-    <Layout>
-      <SearchBar/>
-      <Menu />
-    </Layout>
-  );
-}
+	return (
+		<Layout>
+			<SearchBar/>
+			<Menu/>
+		</Layout>
+	);
+};
 
 export default App;
