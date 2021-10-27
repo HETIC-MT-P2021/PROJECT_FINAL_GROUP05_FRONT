@@ -20,38 +20,46 @@ const MenuDiv = styled.div`
 const mainMenuItems: Array<MenuItem> = [
   {
     name: "Tableau de bord",
-    icon: <RiDashboardLine />
+    icon: <RiDashboardLine />,
+		url: "dashboard"
   },
   {
-    name: "Bibliothèques",
-    icon: <IoLibraryOutline />
+    name: "Bibliothèque",
+    icon: <IoLibraryOutline />,
+		url: "library"
   },
   {
     name: "Réglages",
-    icon: <FiSettings />
+    icon: <FiSettings />,
+		url: "settings"
   },
   {
     name: "Premium",
-    icon: <AiOutlineCrown className={"has-text-warning"} />
+    icon: <AiOutlineCrown className={"has-text-warning"} />,
+		url: "premium"
   }
 ];
 
 const featureMenuItems: Array<MenuItem> = [
   {
     name: "Audios",
-    icon: <FiMusic />
+    icon: <FiMusic />,
+		url: "audios"
   },
   {
     name: "Vidéos",
-    icon: <AiOutlineVideoCamera />
+    icon: <AiOutlineVideoCamera />,
+		url: "videos"
   },
   {
     name: "Images",
-    icon: <BsImage />
+    icon: <BsImage />,
+		url: "pictures"
   },
   {
     name: "Avancé",
-    icon: <AiOutlineCrown className={"has-text-warning"} />
+    icon: <AiOutlineCrown className={"has-text-warning"} />,
+		url: "more"
   }
 ];
 
@@ -61,8 +69,8 @@ const Menu: FC = () => {
       <MenuDiv className="column is-one-fifth">
         <div className="has-background-dark is-flex is-justify-content-start is-align-items-center is-flex-direction-column hero is-link is-fullheight">
           <img alt="logo" src="assets/logo192.png" />
-          <MenuList items={mainMenuItems} title="" />
-          <MenuList items={featureMenuItems} title="Fonctionnalités" />
+          <MenuList items={mainMenuItems} title="" url=""/>
+          <MenuList items={featureMenuItems} title="Fonctionnalités" url=""/>
 					<div className="is is-justify-content-end">Se déconnecter</div>
         </div>
       </MenuDiv>
