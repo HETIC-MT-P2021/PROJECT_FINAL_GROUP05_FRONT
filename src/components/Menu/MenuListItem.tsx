@@ -1,18 +1,25 @@
 import {FC, ReactElement} from "react";
+import {
+	BrowserRouter as Router,
+	Link
+} from "react-router-dom";
 
 interface MenuItemProps {
   icon: ReactElement;
-  name: String;
+  name: string;
+	url: string;
 }
 
-const MenuListItem: FC<MenuItemProps> = ({ name, icon }: MenuItemProps) => {
+const MenuListItem: FC<MenuItemProps> = ({ name, icon, url }: MenuItemProps) => {
   return (
-    <li className="my-1">
-      <a href="#" className={"is-link"}>
-      {icon}&nbsp;&nbsp;
-      {name}
-      </a>
-    </li>
+			<Router>
+				<Link className={"is-link"} to={{
+					pathname: url,
+				}}>
+					{icon}&nbsp;&nbsp;
+					{name}
+				</Link>
+			</Router>
   );
 };
 

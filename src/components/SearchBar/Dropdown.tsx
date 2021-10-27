@@ -4,12 +4,13 @@ import styled from "styled-components";
 
 const ButtonContainer = styled.div`
   width: 90%;
+	justify-content: space-between;
 `;
 
 const Dropdown: FC = () => {
   const [isOpen, toggleOpen] = useState(false);
   return (
-    <ButtonContainer className="my-4">
+    <ButtonContainer className="column is-pulled-right my-4">
       <ButtonContainer
         className={`dropdown ${isOpen ? "is-active" : ""} is-normal is-fullwidth has-background-dark`}
       >

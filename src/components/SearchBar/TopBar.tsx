@@ -1,5 +1,5 @@
 import { FC } from "react";
-import LoginItem from "./LoginItem";
+import EndBarItems from "./EndBarItems";
 import styled from 'styled-components';
 
 const Navbar = styled.nav`
@@ -10,10 +10,10 @@ const Navbar = styled.nav`
 const TopBar: FC = () => {
   return (
     <Navbar className="navbar has-background-dark is-fixed-top hero hero-head is-small" role="top bar" aria-label="top bar">
-      <div id="navbarBasicExample" className="navbar-menu">
-        <div className="navbar-start">
+      <div id="navbarBasicExample" className="navbar-menu columns is-desktop is-vcentered">
+        <div className="column is-four-fifths">
         </div>
-        <LoginItem/>
+        <EndBarItems/>
       </div>
     </Navbar>
   );
