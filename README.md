@@ -11,7 +11,7 @@ Welcome on our Carlos bot description page. This bot allows you to download medi
 
 ### Requirements
 
-* [npm](npmjs.com)
+* [npm](https://npmjs.com)
 
 ### Build and install
 
