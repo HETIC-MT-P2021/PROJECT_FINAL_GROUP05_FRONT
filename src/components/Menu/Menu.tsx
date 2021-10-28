@@ -69,7 +69,7 @@ const Menu: FC = () => {
     <div className="columns">
       <MenuDiv className="column is-one-fifth">
         <div className="has-background-dark is-flex is-justify-content-start is-align-items-center is-flex-direction-column hero is-link is-fullheight">
-          <img height="110px" alt="logo" src={logo} />
+          <img alt="logo" src={logo} />
           <MenuList items={mainMenuItems} title="" url=""/>
           <MenuList items={featureMenuItems} title="Fonctionnalités" url=""/>
         </div>
