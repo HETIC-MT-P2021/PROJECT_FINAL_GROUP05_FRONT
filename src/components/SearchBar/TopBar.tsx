@@ -11,7 +11,7 @@ const TopBar: FC = () => {
   return (
     <Navbar className="navbar has-background-dark is-fixed-top hero hero-head is-small" role="top bar" aria-label="top bar">
       <div id="navbarBasicExample" className="navbar-menu columns is-desktop is-vcentered">
-        <div className="column is-four-fifths">
+        <div className="column is-three-quarters">
         </div>
         <EndBarItems/>
       </div>
