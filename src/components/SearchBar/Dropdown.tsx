@@ -3,14 +3,14 @@ import {FiChevronDown} from "react-icons/all";
 import styled from "styled-components";
 
 const ButtonContainer = styled.div`
-  width: 90%;
+  width: 200px;
 	justify-content: space-between;
 `;
 
 const Dropdown: FC = () => {
   const [isOpen, toggleOpen] = useState(false);
   return (
-    <ButtonContainer className="column is-pulled-right my-4">
+    <ButtonContainer className="is-pulled-right my-4 ml-3">
       <ButtonContainer
         className={`dropdown ${isOpen ? "is-active" : ""} is-normal is-fullwidth has-background-dark`}
       >
