@@ -1,5 +1,4 @@
 import { FC, useState } from "react";
-import {FiChevronDown} from "react-icons/all";
 import styled from "styled-components";
 
 const ProfileButton = styled.button`
