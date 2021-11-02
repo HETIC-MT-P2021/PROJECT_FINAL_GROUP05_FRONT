@@ -4,8 +4,9 @@ import axios from "axios";
 
 type User = {
   username?: string,
-  user_id?: number,
-  profile_picture?: string,
+  userId?: number,
+  profilePicture?: string,
+  isLoggedIn?: boolean
 }
 
 interface AppContextInterface {
@@ -17,8 +18,9 @@ const AuthContext = React.createContext<Partial<AppContextInterface>>({});
 const AuthProvider: FC = ({ children }) => {
   const [user, setUser] = useState<User>({
     username: undefined,
-    user_id: undefined,
-    profile_picture: undefined,
+    userId: undefined,
+    profilePicture: undefined,
+    isLoggedIn: false
   });
 
   useEffect(() => {
@@ -39,9 +41,12 @@ const AuthProvider: FC = ({ children }) => {
 
         const authenticatedUser = {
           username: response.data.username,
-          user_id: response.data.id,
-          profile_picture: response.data.avatar,
+          userId: response.data.id,
+          profilePicture: response.data.avatar,
+          isLoggedIn: true
         }
+
+        console.log(authenticatedUser)
 
         setUser(authenticatedUser)
       })
@@ -59,4 +64,6 @@ const AuthProvider: FC = ({ children }) => {
   );
 };
 
-export { AuthProvider, AuthContext }
+export {AuthProvider, AuthContext};
+export type { User };
+
