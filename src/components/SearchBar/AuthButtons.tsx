@@ -7,9 +7,7 @@ const AuthButton = () => {
 
   const { user } = useContext(AuthContext);
 
-  let { isLoggedIn } = User;
-
-  if (isLoggedIn === true) {
+  if (user?.isLoggedIn === true) {
     return (
       <>
         <Dropdown/>
