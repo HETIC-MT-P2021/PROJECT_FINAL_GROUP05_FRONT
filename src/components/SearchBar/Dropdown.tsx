@@ -7,6 +7,13 @@ const ButtonContainer = styled.div`
 	justify-content: space-between;
 `;
 
+const ButtonLink = styled.button`
+  background: none!important;
+  border: none;
+  padding: 0!important;
+  cursor: pointer;  
+`
+
 const Dropdown: FC = () => {
   const [isOpen, toggleOpen] = useState(false);
   return (
@@ -29,20 +36,18 @@ const Dropdown: FC = () => {
         </ButtonContainer>
         <div className="dropdown-menu" id="dropdown-menu" role="menu">
           <div className="dropdown-content has-background-black-ter">
-            <a
-              href="#"
+            <ButtonLink
               className="dropdown-item has-background-black-ter has-text-white"
               onClick={() => toggleOpen(!isOpen)}
             >
               Risitar
-            </a>
-            <a
-              href="#"
+            </ButtonLink>
+            <ButtonLink
               className="dropdown-item has-background-black-ter has-text-white"
               onClick={() => toggleOpen(!isOpen)}
             >
               Serveur 2
-            </a>
+            </ButtonLink>
           </div>
         </div>
       </ButtonContainer>

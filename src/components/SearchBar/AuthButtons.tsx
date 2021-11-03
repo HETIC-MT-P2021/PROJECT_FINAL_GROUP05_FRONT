@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { AuthContext, User } from "../../Auth";
+import { AuthContext } from "../../Auth";
 import Dropdown from "./Dropdown";
 import ProfileDropdown from "./ProfileDropdown";
 

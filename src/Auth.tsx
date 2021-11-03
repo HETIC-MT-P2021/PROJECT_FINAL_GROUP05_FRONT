@@ -25,11 +25,21 @@ const AuthProvider: FC = ({ children }) => {
 
   useEffect(() => {
     const fragment = new URLSearchParams(window.location.hash.slice(1))
-    const [accessToken, tokenType] = [fragment.get('access_token'), fragment.get('token_type')];
+    const [accessToken, tokenType, expiresIn, scope] = [fragment.get('access_token'), fragment.get('token_type'), fragment.get('expires_in'), fragment.get('scope')];
 
     if (!accessToken) {
       console.log("Invalid access token");
     }
+
+    const storableToken = {
+      "access_token": accessToken,
+      "token_type": tokenType,
+      "expires_in": expiresIn,
+      "refresh_token": "a refresh token",
+      "scope": scope
+    }
+
+    console.log(storableToken)
 
     axios.get('https://discord.com/api/users/@me', {
       headers: {
@@ -45,8 +55,6 @@ const AuthProvider: FC = ({ children }) => {
           profilePicture: response.data.avatar,
           isLoggedIn: true
         }
-
-        console.log(authenticatedUser)
 
         setUser(authenticatedUser)
       })

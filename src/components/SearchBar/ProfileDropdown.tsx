@@ -18,6 +18,14 @@ const ProfilePicture = styled.img`
   min-width: 40px!important;
   min-height: 40px!important;
 `
+
+const ButtonLink = styled.button`
+  background: none!important;
+  border: none;
+  padding: 0!important;
+  cursor: pointer;
+`
+
 type ProfileDropdownPropsInterface = {
   user?: User,
 }
@@ -49,9 +57,9 @@ const ProfileDropdown: FC<ProfileDropdownPropsInterface> = ({ user }) => {
           </div>
           <hr className="dropdown-divider"/>
           <div className="dropdown-item">
-            <a href="#" className="has-text-danger">
+            <ButtonLink className="has-text-danger">
               Se déconnecter
-            </a>
+            </ButtonLink>
           </div>
         </div>
       </DropdownMenu>
