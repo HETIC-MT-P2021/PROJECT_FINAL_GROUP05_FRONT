@@ -1,4 +1,4 @@
-import { FC, useEffect, useState, useReducer } from "react";
+import { FC, useEffect, useReducer } from "react";
 import * as React from "react";
 import axios from "axios";
 
@@ -7,10 +7,6 @@ type User = {
   userId?: number,
   profilePicture?: string,
   isLoggedIn: boolean
-}
-
-interface AppContextInterface {
-  user: User,
 }
 
 const defaultUser = {
@@ -38,7 +34,7 @@ const AuthProvider: FC = ({ children }) => {
 
   useEffect(() => {
     const fragment = new URLSearchParams(window.location.hash.slice(1))
-    const [accessToken, tokenType, expiresIn, scope] = [fragment.get('access_token'), fragment.get('token_type'), fragment.get('expires_in'), fragment.get('scope')];
+    const [accessToken, tokenType] = [fragment.get('access_token'), fragment.get('token_type')];
 
     if (!accessToken) {
       console.log("Invalid access token");
@@ -51,8 +47,6 @@ const AuthProvider: FC = ({ children }) => {
       }
     })
       .then(response => {
-        console.log(user)
-        console.log(response)
         dispatch({ type: "login", user: {
             username: response.data.username,
             userId: response.data.id,
@@ -63,6 +57,9 @@ const AuthProvider: FC = ({ children }) => {
       })
       .catch(console.error);
   }, [])
+
+  console.log('reducer');
+  console.log(user);
 
   return (
     <AuthContext.Provider value={ user }>

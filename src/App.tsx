@@ -8,7 +8,6 @@ import SettingsList from "./components/Settings/SettingsCommandsList";
 import SearchBar from "./components/SearchBar/TopBar";
 
 const App: FC = () => {
-
 	return (
 			<Layout>
 				<SearchBar/>

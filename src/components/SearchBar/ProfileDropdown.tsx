@@ -1,6 +1,6 @@
 import { FC, useState, useReducer } from "react";
 import styled from "styled-components";
-import { AuthProvider, AuthContext, User, userReducer, defaultUser } from "../../Auth"
+import { User, userReducer, defaultUser } from "../../Auth"
 
 const ProfileButton = styled.button`
   border-radius: 50%;
@@ -30,9 +30,11 @@ type ProfileDropdownPropsInterface = {
   user: User,
 }
 
-const ProfileDropdown: FC<ProfileDropdownPropsInterface> = ({user}) => {
+const ProfileDropdown: FC<ProfileDropdownPropsInterface> = () => {
   const [isOpen, toggleOpen] = useState(false);
   const [user, dispatch] = useReducer(userReducer, defaultUser);
+
+  console.log('user', user);
 
   const logout = () => {
 

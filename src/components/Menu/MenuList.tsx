@@ -14,8 +14,8 @@ const MenuList: FC<MenuListProps> = ({ items, title }: MenuListProps) => {
     <div>
       <MenuListTitle title={title} />
       <ul className="is-flex is-flex-direction-column is-flex-justify-content-center has-text-white">
-        {items.map(item => {
-          return <MenuListItem name={item.name} icon={item.icon} url={item.url}/>;
+        {items.map((item, idx) => {
+          return <MenuListItem key={idx} name={item.name} icon={item.icon} url={item.url}/>;
         })}
       </ul>
     </div>

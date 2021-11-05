@@ -31,9 +31,9 @@ const SettingsCommandsList: FC = () => {
 		<SettingsCommandsListMainContainer className="column hero is-fullwidth is-flex is-align-items-end">
     <SettingsCommandsListContainer className="has-background-grey-darker column is-three-quarters">
       <SettingsCommandsTitle title="Gestion des commandes" />
-      {settingsCommandsItems.map(item => {
+      {settingsCommandsItems.map((item, idx) => {
         return (
-          <SettingsCommandsListItem title={item.title} command={item.command} />
+          <SettingsCommandsListItem key={idx} title={item.title} command={item.command} />
         );
       })}
     </SettingsCommandsListContainer>
