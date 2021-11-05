@@ -1,6 +1,6 @@
 import { FC } from "react";
-import SettingsCommandsTitle from "./SettingsCommandsTitle";
-import SettingsCommandsListItem from "./SettingsCommandsListItem";
+import SettingsCommandsTitle from "./LibraryTitle";
+import SettingsCommandsListItem from "./LibraryListItem";
 import { SettingsCommandsItem } from "../../domain/SettingsCommandsItem";
 import styled from "styled-components";
 
@@ -23,14 +23,13 @@ const SettingsCommandsListContainer = styled.div`
 
 const SettingsCommandsListMainContainer = styled.div`
   margin-right: 5rem;
-  height: 100vh;
 `;
 
-const SettingsCommandsList: FC = () => {
+const LibraryList: FC = () => {
   return (
 		<SettingsCommandsListMainContainer className="column hero is-fullwidth is-flex is-align-items-end">
     <SettingsCommandsListContainer className="has-background-grey-darker column is-three-quarters">
-      <SettingsCommandsTitle title="Gestion des commandes" />
+      <SettingsCommandsTitle title="Visualisation des médias" />
       {settingsCommandsItems.map(item => {
         return (
           <SettingsCommandsListItem title={item.title} command={item.command} />
@@ -41,4 +40,4 @@ const SettingsCommandsList: FC = () => {
   );
 };
 
-export default SettingsCommandsList;
+export default LibraryList;

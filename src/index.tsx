@@ -1,12 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import "bulma/css/bulma.min.css";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { createBrowserHistory } from "history";
+import Menu from "./components/Menu/Menu";
+import SearchBar from "./components/SearchBar/TopBar"
+import RouteProvider from "./Route"
+
+const customHistory = createBrowserHistory();
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <RouteProvider>
+      <App />
+    </RouteProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
