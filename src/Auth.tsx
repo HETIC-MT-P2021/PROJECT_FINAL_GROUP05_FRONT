@@ -1,73 +1,65 @@
 import { FC, useEffect, useReducer } from "react";
+import { AuthContext } from "./context/AuthContext";
 import * as React from "react";
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
+import { AuthReducer, initialUserState } from "./reducer/AuthReducer";
 
-type User = {
-  username?: string,
-  userId?: number,
-  profilePicture?: string,
-  isLoggedIn: boolean
-}
-
-const defaultUser = {
-  username: undefined,
-  userId: undefined,
-  profilePicture: undefined,
-  isLoggedIn: false
-}
-
-const AuthContext = React.createContext<User>(defaultUser);
-
-const userReducer = (state: any, action: { type: string; user: User; }) =>  {
-  switch (action.type) {
-    case "login":
-      return action.user;
-    case "logout":
-      return defaultUser;
-    default:
-      return state;
-  }
+interface RawResponse {
+	username: string;
+	id: string;
+	avatar: string;
 }
 
 const AuthProvider: FC = ({ children }) => {
-  const [user, dispatch] = useReducer(userReducer, defaultUser);
+	const [userState, dispatch] = useReducer(AuthReducer, initialUserState);
 
-  useEffect(() => {
-    const fragment = new URLSearchParams(window.location.hash.slice(1))
-    const [accessToken, tokenType] = [fragment.get('access_token'), fragment.get('token_type')];
+	useEffect(() => {
+		const fragment = new URLSearchParams(window.location.hash.slice(1));
 
-    if (!accessToken) {
-      console.log("Invalid access token");
-    }
+		const [accessToken, tokenType] = [
+			fragment.get("access_token"),
+			fragment.get("token_type"),
+		];
 
-    axios.get('https://discord.com/api/users/@me', {
-      headers: {
-        authorization: `${tokenType} ${accessToken}`,
-        'Content-Type': 'application/x-www-form-urlencoded'
-      }
-    })
-      .then(response => {
-        dispatch({ type: "login", user: {
-            username: response.data.username,
-            userId: response.data.id,
-            profilePicture: response.data.avatar,
-            isLoggedIn: true
-          }
-        })
-      })
-      .catch(console.error);
-  }, [])
+		if (!accessToken) {
+			console.log("Invalid access token");
+		}
 
-  console.log('reducer');
-  console.log(user);
+		axios
+			.get("https://discord.com/api/users/@me", {
+				headers: {
+					authorization: `${tokenType} ${accessToken}`,
+					"Content-Type": "application/x-www-form-urlencoded",
+				},
+			})
+			.then((response: AxiosResponse<RawResponse>) => {
+				console.log("response", response);
 
-  return (
-    <AuthContext.Provider value={ user }>
-      {children}
-    </AuthContext.Provider>
-  );
+				dispatch({
+					type: "login",
+					payload: {
+						user: {
+							username: response.data.username,
+							userId: response.data.id,
+							profilePicture: response.data.avatar,
+						},
+						token: "tokenExample",
+					},
+				});
+			})
+			.catch(console.error);
+	}, []);
+
+	return (
+		<AuthContext.Provider
+			value={{
+				state: userState,
+				dispatch,
+			}}
+		>
+			{children}
+		</AuthContext.Provider>
+	);
 };
 
-export { AuthProvider, AuthContext, userReducer, defaultUser };
-export type { User };
-
+export { AuthProvider };
