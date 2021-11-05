@@ -4,10 +4,11 @@ import Dropdown from "./Dropdown";
 import ProfileDropdown from "./ProfileDropdown";
 
 const AuthButton = () => {
+  const user = useContext(AuthContext);
 
-  const { user } = useContext(AuthContext);
+  console.log(user)
 
-  if (user?.isLoggedIn === true) {
+  if (user.isLoggedIn === true) {
     return (
       <>
         <Dropdown/>

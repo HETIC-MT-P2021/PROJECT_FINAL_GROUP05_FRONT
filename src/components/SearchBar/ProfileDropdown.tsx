@@ -1,6 +1,6 @@
-import { FC, useState } from "react";
+import { FC, useState, useReducer } from "react";
 import styled from "styled-components";
-import { User } from "../../Auth"
+import { AuthProvider, AuthContext, User, userReducer, defaultUser } from "../../Auth"
 
 const ProfileButton = styled.button`
   border-radius: 50%;
@@ -27,12 +27,19 @@ const ButtonLink = styled.button`
 `
 
 type ProfileDropdownPropsInterface = {
-  user?: User,
+  user: User,
 }
 
-const ProfileDropdown: FC<ProfileDropdownPropsInterface> = ({ user }) => {
-
+const ProfileDropdown: FC<ProfileDropdownPropsInterface> = ({user}) => {
   const [isOpen, toggleOpen] = useState(false);
+  const [user, dispatch] = useReducer(userReducer, defaultUser);
+
+  const logout = () => {
+
+    dispatch({ type: "logout", user: defaultUser })
+    console.log("logout")
+  }
+
   const formatAvatarUrl = ((user: { userId?: number; profilePicture?: string; }) => {
     const baseUrl = "http://cdn.discordapp.com/avatars/"
     const fallback = "https://www.handiclubnimois.fr/wp-content/uploads/2020/10/blank-profile-picture-973460_1280.png"
@@ -57,7 +64,7 @@ const ProfileDropdown: FC<ProfileDropdownPropsInterface> = ({ user }) => {
           </div>
           <hr className="dropdown-divider"/>
           <div className="dropdown-item">
-            <ButtonLink className="has-text-danger">
+            <ButtonLink onClick={ logout } className="has-text-danger">
               Se déconnecter
             </ButtonLink>
           </div>
