@@ -23,6 +23,7 @@ const SettingsCommandsListContainer = styled.div`
 
 const SettingsCommandsListMainContainer = styled.div`
   margin-right: 5rem;
+  height: 100vh;
 `;
 
 const SettingsCommandsList: FC = () => {
