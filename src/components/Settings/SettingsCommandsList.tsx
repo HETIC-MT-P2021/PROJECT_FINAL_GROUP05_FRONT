@@ -3,6 +3,7 @@ import SettingsCommandsTitle from "./SettingsCommandsTitle";
 import SettingsCommandsListItem from "./SettingsCommandsListItem";
 import { SettingsCommandsItem } from "../../domain/SettingsCommandsItem";
 import styled from "styled-components";
+import ContentCard from "../ContentCard"
 
 const settingsCommandsItems: Array<SettingsCommandsItem> = [
   {
@@ -21,14 +22,9 @@ const SettingsCommandsListContainer = styled.div`
   border-radius: 10px;
 `;
 
-const SettingsCommandsListMainContainer = styled.div`
-  margin-right: 5rem;
-  height: 100vh;
-`;
-
 const SettingsCommandsList: FC = () => {
   return (
-		<SettingsCommandsListMainContainer className="column hero is-fullwidth is-flex is-align-items-end">
+		<ContentCard>
     <SettingsCommandsListContainer className="has-background-grey-darker column is-three-quarters">
       <SettingsCommandsTitle title="Gestion des commandes" />
       {settingsCommandsItems.map(item => {
@@ -37,7 +33,7 @@ const SettingsCommandsList: FC = () => {
         );
       })}
     </SettingsCommandsListContainer>
-		</SettingsCommandsListMainContainer>
+		</ContentCard>
   );
 };
 

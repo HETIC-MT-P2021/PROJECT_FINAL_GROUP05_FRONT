@@ -1,7 +1,7 @@
 import { FC } from "react";
 import styled from "styled-components";
 
-interface SettingsCommandsTitleProps {
+interface LibraryTitleProps {
   title: String;
 }
 
@@ -9,9 +9,9 @@ const Title = styled.h1`
   margin-bottom: 10px;
 `;
 
-const LibraryTitle: FC<SettingsCommandsTitleProps> = ({
+const LibraryTitle: FC<LibraryTitleProps> = ({
   title
-}: SettingsCommandsTitleProps) => {
+}: LibraryTitleProps) => {
   return <Title className="has-text-white is-size-4">{title}</Title>;
 };
 

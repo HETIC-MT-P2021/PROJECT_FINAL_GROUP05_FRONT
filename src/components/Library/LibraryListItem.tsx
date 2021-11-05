@@ -1,26 +1,34 @@
 import { FC } from "react";
-import { SettingsCommandsItem } from "../../domain/SettingsCommandsItem";
-import SettingsCommandsListItemCheckbox from "../Settings/SettingsCommandsListItemCheckbox";
 import styled from "styled-components";
+import LibraryItemProvider from "./LibraryItemProvider";
 
-const SettingsCommandsListItemContainer = styled.div`
+const LibraryListItemContainer = styled.div`
   padding: 15px;
   margin-bottom: 20px;
   border-radius: 10px;
 `;
 
-const LibraryListItem: FC<SettingsCommandsItem> = ({
-  title,
-  command
-}: SettingsCommandsItem) => {
+const media = {
+  author: "JBleBoss",
+  url: "media.png",
+}
+
+const LibraryListItem: FC = ({}) => {
   return (
-    <SettingsCommandsListItemContainer className="is-flex is-justify-content-space-between is-align-items-center has-background-black-ter">
-      <div>
-        <h2 className="has-text-white">{title}</h2>
-        <p className="is-size-7">{command}</p>
+    <LibraryListItemContainer className="columns is-">
+      <div className={"columns is-desktop is-vcentered is-flex is-justify-content-space-around is-flex-direction-row is-flex-wrap-wrap"}>
+        <LibraryItemProvider url={media.url} author={media.author}/>
+        <LibraryItemProvider url={media.url} author={media.author}/>
+        <LibraryItemProvider url={media.url} author={media.author}/>
+        <LibraryItemProvider url={media.url} author={media.author}/>
+        <LibraryItemProvider url={media.url} author={media.author}/>
+        <LibraryItemProvider url={media.url} author={media.author}/>
+        <LibraryItemProvider url={media.url} author={media.author}/>
+        <LibraryItemProvider url={media.url} author={media.author}/>
+        <LibraryItemProvider url={media.url} author={media.author}/>
+        <LibraryItemProvider url={media.url} author={media.author}/>
       </div>
-      <SettingsCommandsListItemCheckbox/>
-    </SettingsCommandsListItemContainer>
+    </LibraryListItemContainer>
   );
 };
 
