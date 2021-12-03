@@ -18,7 +18,7 @@ You can find our docs folder [here](https://drive.google.com/drive/folders/1Lezt
 - As a user, I want to install Carlos Bot on my Discord server.
 - As an admin, I want to manage commands, users and medias user will send on Discord.
 
-## Main Libraries 📚 (incoming)
+## Main Libraries 📚 
 
 - [React JS](reactjs.org/docs/getting-started.html)
 - [Discord OAuth2](https://discord.com/developers/docs/topics/oauth2)
