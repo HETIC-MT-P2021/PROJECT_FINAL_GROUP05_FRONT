@@ -15,8 +15,23 @@ You can find our docs folder [here](https://drive.google.com/drive/folders/1Lezt
 
 ## Features 📘 
 
-- As a user, I want to install Carlos Bot on my Discord server.
-- As an admin, I want to manage commands, users and medias user will send on Discord.
+As a user of a Discord server I want to be able to:
+
+- View user's recent medias (and others, if the discord server admin allowed it)
+- Download medias
+- Process images (incoming)
+
+As a Discord administrator I want to be able to:
+
+- Manage the features available to the user
+- Activate a premium pass
+- View each user's recent medias
+- Statistics
+- Total number of medias
+- Most popular medias
+- Number of medias per user
+- View a user's media
+- Delete a user's media
 
 ## Main Libraries 📚 
 
